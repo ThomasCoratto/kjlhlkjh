@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-arquivo_resultado_final = r'C:\Users\moesios\Desktop\tratamento contorno python\Resultado_final.xlsx'
+arquivo_resultado_final = r'seu arquivo'.xlsx'
 df = pd.read_excel(arquivo_resultado_final)
 
 df['Validação_FORMS'] = df.apply(lambda row: 'INVÁLIDO' if pd.isna(row['ID_FORMULARIO']) else ('INVÁLIDO' if df[df['ID_DADOS'] == row['ID_DADOS']]['ID_DADOS'].count() != row['NÚMERO DE PASSAGEIROS'] else 'VÁLIDO'), axis=1)
